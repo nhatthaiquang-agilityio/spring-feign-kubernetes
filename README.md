@@ -32,9 +32,9 @@ kubectl create -f manifests/hello-service.yml
 ```
 
 ##### client-service: Using Feign, connect to hello-service
-http://192.168.99.10:8899/getall-hi
+http://192.168.99.100:31899/getall-hi
 
-It will request to http://192.168.99.10:8090/hi_getall of hello-service
+It will request to http://192.168.99.100:31090/hi_getall of hello-service
 
 Build client-service
 ```
