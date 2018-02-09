@@ -1,0 +1,45 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: client-service
+  labels:
+    app: client-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: client-service
+    spec:
+      imagePullSecrets:
+      - name: registry-secret
+      containers:
+      - name: client-service
+        image: nhatthai/client-service:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8899
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: native
+        - name: VERSION
+          value: 'K8S_TIMESTAMP'
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+  labels:
+    app: client-service
+spec:
+  type: NodePort
+  ports:
+  # the port that this service should serve on
+  - port: 8899
+    targetPort: 8899
+    nodePort: 31899
+  selector:
+    app: client-service

@@ -1,0 +1,4 @@
+hello/FeignClientApplication.class
+hello/UserClient.class
+hello/UserController.class
+hello/UserClientFallback.class

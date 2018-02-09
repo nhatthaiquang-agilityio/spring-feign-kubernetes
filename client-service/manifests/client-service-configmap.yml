@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: client-service
+  labels:
+    app: client-service
+  namespace: default
+data:
+  application.yml: |-
+    endpoints.trace.sensitive: false
+    backend:
+      ribbon:
+        eureka.enabled: false
+        client.enabled: true
+        ServerListRefreshInterval: 15000
