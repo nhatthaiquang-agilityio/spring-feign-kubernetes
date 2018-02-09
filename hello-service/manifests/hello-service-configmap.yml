@@ -1,0 +1,10 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: hello-service
+  labels:
+    app: hello-service
+  namespace: default
+data:
+  application.yml: |-
+    endpoints.trace.sensitive: false

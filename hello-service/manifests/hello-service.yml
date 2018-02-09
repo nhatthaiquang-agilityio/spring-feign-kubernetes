@@ -1,0 +1,45 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-service
+  labels:
+    app: hello-service
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hello-service
+    spec:
+      imagePullSecrets:
+      - name: registry-secret
+      containers:
+      - name: hello-service
+        image: nhatthai/hello-service:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8090
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: native
+        - name: VERSION
+          value: 'K8S_TIMESTAMP'
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-service
+  labels:
+    app: hello-service
+spec:
+  type: NodePort
+  ports:
+  # the port that this service should serve on
+  - port: 8090
+    targetPort: 8090
+    nodePort: 31090
+  selector:
+    app: hello-service
