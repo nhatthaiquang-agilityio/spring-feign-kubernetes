@@ -35,6 +35,8 @@
             <artifactId>spring-cloud-kubernetes-config</artifactId>
             <version>0.2.0.RELEASE</version>
         </dependency>
+
+		<!-- Ribbon discovery in Kubernetes -->
 		<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>
@@ -45,15 +47,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
-		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-ribbon</artifactId>
-        </dependency>
-		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-
 
 		<!-- feign libs -->
 		<dependency>
@@ -61,7 +54,6 @@
 			<artifactId>feign-core</artifactId>
 			<version>${feign.version}</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.github.openfeign/feign-ribbon -->
 		<!-- <dependency>
 			<groupId>io.github.openfeign</groupId>
