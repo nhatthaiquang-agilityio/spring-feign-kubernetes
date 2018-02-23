@@ -1,4 +1,4 @@
-# Spring Cloud: FeignClient and Fabric8io Kubernetes lib
+# Spring Cloud Kubernetes: FeignClient and Ribbon discovery in Kubernetes
 Providing client-side load balancing for a microservice application using Netflix Ribbon and Netflix Feign as well.
 Fabric Kubernetes lib will find services(Not config list of servers)
 Using Ribbon discovery in Kubernetes `spring-cloud-starter-kubernetes-netflix`
@@ -56,4 +56,4 @@ kubectl create -f manifests/client-service.yml
 ```
 
 ### Reference
-[Fabric8io - Kubernetes integration with Spring Cloud](https://github.com/fabric8io/spring-cloud-kubernetes)
+[Spring Cloud integration with Kubernetes](https://github.com/spring-cloud-incubator/spring-cloud-kubernetes)
