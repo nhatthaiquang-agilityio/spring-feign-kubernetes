@@ -12,7 +12,7 @@ class UserController {
     @Autowired
     private UserClient userClient;
 
-    @RequestMapping("/getall-hi")
+    @RequestMapping("/client-get-all-greetings")
 	public List<String> getAllGreetings() {
 		List<String> greetings = userClient.getGreetings();
 		return greetings;

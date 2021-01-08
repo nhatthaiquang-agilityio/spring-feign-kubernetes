@@ -16,7 +16,7 @@ public interface UserClient {
     // @RequestLine("GET /hi_getall")
     // List<String> getGreetings();
 
-    @RequestMapping(method = RequestMethod.GET, value = "/hi_getall", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/get-greetings", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     List<String> getGreetings();
 }
 
